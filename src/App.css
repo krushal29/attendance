@@ -1,0 +1,49 @@
+ @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break {
+    page-break-after: always;
+  }
+
+  .grid,
+  .grid > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    width: 100%;
+  }
+
+  /* Force content to fit on two pages */
+  .print-container {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
